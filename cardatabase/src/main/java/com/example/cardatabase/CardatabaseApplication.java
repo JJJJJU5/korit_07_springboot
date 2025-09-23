@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Arrays;
 
 @SpringBootApplication
+
 public class CardatabaseApplication implements CommandLineRunner {
 	private static final Logger logger = LoggerFactory.getLogger(
 			CardatabaseApplication.class
@@ -55,6 +56,7 @@ public class CardatabaseApplication implements CommandLineRunner {
 //		for (Car car : repository.findAll()) {
 //			logger.info("brand : {}, model : {}", car.getBrand(), car.getModel());
 //		}
+
 
 
 	}
