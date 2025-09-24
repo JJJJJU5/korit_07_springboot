@@ -5,17 +5,17 @@ import com.example.cardatabase.domain.CarRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class CarController {
-    private final CarRepository carRepository;
-
-    public CarController(CarRepository carRepository) {
-        this.carRepository = carRepository;
-    }
-
-    @GetMapping("/cars")
-    public Iterable<Car> getCars() {
-        // 복잡하게 할 거 없이 자동차들이 저장된 테이블에서 전체 명단을 가지고 온다.
-        return carRepository.findAll();
-    }
-}
+//@RestController
+//public class CarController {
+//    private final CarRepository carRepository;
+//
+//    public CarController(CarRepository carRepository) {
+//        this.carRepository = carRepository;
+//    }
+//
+//    @GetMapping("/cars")
+//    public Iterable<Car> getCars() {
+//        // 복잡하게 할 거 없이 자동차들이 저장된 테이블에서 전체 명단을 가지고 온다.
+//        return carRepository.findAll();
+//    }
+//}
