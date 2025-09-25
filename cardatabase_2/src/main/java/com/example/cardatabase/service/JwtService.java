@@ -17,7 +17,7 @@ public class JwtService {
     static final String PREFIX = "Bearer";
 
     // 비밀키 생성.
-    static final Key key = Keys.secretKeyFor(SignatureAlgorithm.ES256);
+    static final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
     // 서명이 이루어진 JWT 토큰을 생성
     public String getToken(String username) {
@@ -29,7 +29,7 @@ public class JwtService {
         return token;
     }
 
-    // 요청(Request)의 Authorization 헤더에서 토큰을 가져온 뒤에그 토큰 내부를 확인하고
+    // 요청(Request)의 Authorization 헤더에서 토큰을 가져온 뒤에 그 토큰 내부를 확인하고
     // username을 가지고 오는 부분이다.
     public String getAuthUser(HttpServletRequest request) {
         String token = request.getHeader( // 이 클래스의 객체가 정확히 뭔지는 모르지만 method
@@ -38,14 +38,13 @@ public class JwtService {
                 HttpHeaders.AUTHORIZATION
         );
         if (token != null) {
-            String user = Jwts.parserBuilder()
+            String user = Jwts.parser()
                     .setSigningKey(key)
                     .build()
-                    .parseClaimsJws(token.replace(PREFIX, " "))
+                    .parseClaimsJws(token.replace(PREFIX, ""))
                     .getBody()
                     .getSubject();
-            if (user != null)
-                return user;
+            if (user != null) return user;
         }
         return null;
     }
