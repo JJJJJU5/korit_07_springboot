@@ -31,8 +31,7 @@ public class AuthenticationFilter extends OncePerRequestFilter {
             String user = jwtService.getAuthUser(request); // 여기 작성 방식이 매우 유사하다.
             //인증
             Authentication authentication = new UsernamePasswordAuthenticationToken
-                    (user, null , Collections.emptyList()
-                    );
+                    (user, null , Collections.emptyList());
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
         filterChain.doFilter(request,response);

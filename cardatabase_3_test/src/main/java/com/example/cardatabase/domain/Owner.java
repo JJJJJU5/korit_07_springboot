@@ -26,5 +26,4 @@ public class Owner {
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<Car> cars;
-
 }
