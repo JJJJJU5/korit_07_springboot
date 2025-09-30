@@ -1,12 +1,11 @@
 package com.example.cardatabase4.service;
 
-import com.example.cardatabase4.domain.Car;
-import com.example.cardatabase4.domain.CarRepository;
+import com.example.cardatabase4.entity.Car;
+import com.example.cardatabase4.repository.CarRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.beans.Transient;
 import java.util.List;
 import java.util.Optional;
 

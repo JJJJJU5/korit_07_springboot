@@ -1,6 +1,7 @@
-package com.example.cardatabase4.domain;
+package com.example.cardatabase4.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,10 +9,9 @@ import java.util.List;
 
 @NoArgsConstructor(force = true)
 @RequiredArgsConstructor
+@Data
 @Entity
-@Getter
-@Setter
-@ToString
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

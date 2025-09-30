@@ -1,6 +1,6 @@
 package com.example.cardatabase4.web;
 
-import com.example.cardatabase4.domain.Owner;
+import com.example.cardatabase4.entity.Owner;
 import com.example.cardatabase4.service.OwnerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

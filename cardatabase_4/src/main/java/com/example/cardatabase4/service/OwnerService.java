@@ -1,15 +1,16 @@
 package com.example.cardatabase4.service;
 
-import com.example.cardatabase4.domain.Owner;
-import com.example.cardatabase4.domain.OwnerRepository;
+import com.example.cardatabase4.entity.Owner;
+import com.example.cardatabase4.repository.OwnerRepository;
 import jakarta.transaction.Transactional;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
 @RequiredArgsConstructor
 @Service
+@Data
 public class OwnerService {
    private final OwnerRepository ownerRepository;
 
