@@ -14,7 +14,7 @@ class User {
 public class UserFactory {
     public static void main(String[] args) {
         // TODO: 빌더 패턴을 사용하여 username="user1", email="user1@example.com", age=25 인 User 객체를 생성하고 출력하시오.
-        User user1 =  User.builder()
+        User user1 = User.builder()
                 .username("user1")
                 .email("user1@example.com")
                 .age(25)

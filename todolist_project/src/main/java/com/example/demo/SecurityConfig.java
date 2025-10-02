@@ -1,7 +1,6 @@
-package com.example.cardatabase4;
+package com.example.demo;
 
-
-import com.example.cardatabase4.service.UserDetailsServiceImpl;
+import com.example.demo.service.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -51,27 +50,11 @@ public class SecurityConfig {
                 .sessionManagement(sess ->
                         sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                                .requestMatchers(HttpMethod.POST,"/login").permitAll()
-                                .anyRequest().authenticated()
+                        .requestMatchers(HttpMethod.POST,"/login").permitAll()
+                        .anyRequest().authenticated()
                 )
                 .addFilterBefore(authencationFilter, UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling(ex-> ex.authenticationEntryPoint(exceptionHandler));
         return http.build();
     }
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList("*"));
-        config.setAllowedMethods(Arrays.asList("*"));
-        config.setAllowedHeaders(Arrays.asList("*"));
-
-        config.setAllowCredentials(false);
-        config.applyPermitDefaultValues();
-
-
-        source.registerCorsConfiguration("/**",config);
-        return source;
-    }
 }
-
