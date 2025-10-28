@@ -21,11 +21,6 @@ public class TodoController {
         return todoService.getTodo();
     }
 
-    @GetMapping("/users")
-    public List<AppUser> getApp(){
-        return todoService.getApp();
-    }
-
     @PutMapping("/todos/{id}")
     public ResponseEntity<Todo> putTodo(@PathVariable Long id) {
         return todoService.updateTodoStatus(id).map(updateTodo -> ResponseEntity.ok().body(updateTodo))

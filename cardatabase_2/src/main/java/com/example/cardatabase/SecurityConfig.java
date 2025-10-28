@@ -49,6 +49,11 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
+//                http.csrf(csrf -> csrf.disable())
+//                .cors(withDefaults())
+//                .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests.anyRequest().permitAll());
+
+
         http.csrf(csrf -> csrf.disable())
                 .cors(withDefaults())             // 여기 추가 했다. static 메서드 추가하는 import문도 추가됨
                 .sessionManagement(sessionManagement ->

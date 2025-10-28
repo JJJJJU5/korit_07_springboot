@@ -25,7 +25,6 @@ public class AuthenticationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         // 토큰 가져오기
         String jws = request.getHeader(HttpHeaders.AUTHORIZATION);
-        System.out.println("jws 값 : " + jws);
         if (jws != null) {
             // 토큰 검증 및 사용자 가져오기
             String user = jwtService.getAuthUser(request); // 여기 작성 방식이 매우 유사하다.
@@ -37,4 +36,5 @@ public class AuthenticationFilter extends OncePerRequestFilter {
         }
         filterChain.doFilter(request,response);
     }
+
 }

@@ -18,12 +18,6 @@ import java.util.Optional;
 @Service
 public class TodoService {
     private final TodoRepository todoRepository;
-    private final AppUserRepository appUserRepository;
-//    private final TodoRecord todoRecord;
-
-    public List<AppUser> getApp(){
-        return appUserRepository.findAll();
-    }
 
     public List<Todo> getTodo() {
         return todoRepository.findAll();

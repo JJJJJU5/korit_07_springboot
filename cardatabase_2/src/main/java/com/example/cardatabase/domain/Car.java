@@ -8,9 +8,11 @@ import lombok.*;
 @Entity
 public class Car {
     @Id  //Primary Key
-    @GeneratedValue(strategy = GenerationType.AUTO) //Auto.increment
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Auto.increment
     private long id;
+
     private String brand, model, color , registrationNumber;
+
     private int modelYear, price;
 
     @ManyToOne(fetch = FetchType.LAZY)

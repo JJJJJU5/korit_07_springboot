@@ -14,7 +14,7 @@ import java.util.*;
 @Entity
 public class Owner {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long owner_id;
 
     @NonNull

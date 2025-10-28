@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class Todo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -21,11 +21,12 @@ public class Todo {
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-
+    @JoinColumn(name = "app_user_id",foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
     private AppUser appUser;
 
     public Todo(String content, AppUser appUser) {
         this.content = content;
         this.appUser = appUser;
+        appUser.addTodo(this);
     }
 }

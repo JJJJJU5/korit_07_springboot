@@ -1,9 +1,7 @@
 package com.example.cardatabase;
 
 import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.info.License;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,8 +12,8 @@ public class OpenApiConfig {
     public OpenAPI carDatabaseOpenApi() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Car REST API")
-                        .description("My car Stock")
+                        .title("Shopping REST API")
+                        .description("stock")
                         .version("1.0")
                 );
     }

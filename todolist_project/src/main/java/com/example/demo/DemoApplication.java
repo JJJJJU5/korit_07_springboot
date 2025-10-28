@@ -8,10 +8,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.util.List;
+
 
 @RequiredArgsConstructor
 @SpringBootApplication
@@ -27,12 +26,12 @@ public class DemoApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        AppUser appUser = new AppUser("asd1",passwordEncoder.encode("1234"),"user");
-        appUserRepository.save(appUser);
-        Todo todo = new Todo("할일",appUser);
-        todoRepository.save(new Todo("밥먹기",appUser));
-        todoRepository.save(new Todo("자기",appUser));
-        todoRepository.save(todo);
+        AppUser appUser1 = new AppUser("user",passwordEncoder.encode("1234"),"USER");
+        Todo todo1 = new Todo("첫 번째 할일",appUser1);
+        Todo todo2 = new Todo("두 번째 할일",appUser1);
+        appUser1.addTodo(todo1);
+        appUser1.addTodo(todo2);
+        appUserRepository.save(appUser1);
 
 
     }
