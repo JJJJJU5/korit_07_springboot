@@ -37,6 +37,7 @@ public class CustomOAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHa
             username = "oauth2user_" + oauth2User.getName();
         }
 
+
         // JWT 토큰 생성
         String token = jwtService.generateToken(username);
 

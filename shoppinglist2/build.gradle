@@ -47,6 +47,11 @@ dependencies {
 	//Google OAuth2 관련 의존성
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+	// 1. Google ID Token 검증 및 OAuth2 관련 핵심 클라이언트
+	implementation 'com.google.api-client:google-api-client:2.4.0'
+
+	// 2. HTTP 전송 및 JSON 파싱을 위한 구현체 (NetHttpTransport, GsonFactory 사용 시 필수)
+	implementation 'com.google.http-client:google-http-client-gson:1.44.1'
 }
 
 tasks.named('test') {
